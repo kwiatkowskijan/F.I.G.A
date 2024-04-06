@@ -172,12 +172,12 @@ GameObject:
   - component: {fileID: 263244825}
   - component: {fileID: 263244824}
   m_Layer: 0
-  m_Name: MeleeEnemy
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &263244817
 Transform:
   m_ObjectHideFlags: 0
