@@ -18,6 +18,11 @@ MonoBehaviour:
   magCount: 12
   damage: 12
   range: 20
+  fireRate: 0.3
   eqSlot: 1
+  ammo: 11
+  storageAmmo: 210
   prefab: {fileID: 3157565929852043342, guid: cc4156adf6614cb4693b57fd602cf0b9, type: 3}
-  fireRate: 2
+  shootingParticles: {fileID: 8404393448435896341, guid: ac21f6bd261c316469be6dc52dfee879,
+    type: 3}
+  muzzle: {fileID: 0}
