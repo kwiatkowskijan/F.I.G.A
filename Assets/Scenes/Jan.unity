@@ -297,12 +297,34 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806466319}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1251029240 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6794931681487739029, guid: 97bdd0c8aa07fbe43a18fedc72643ee5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1926914282298783208}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1251029244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2045674089222186360, guid: 97bdd0c8aa07fbe43a18fedc72643ee5,
     type: 3}
   m_PrefabInstance: {fileID: 1926914282298783208}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1251029250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251029240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f78530acbfa6c7448267c1747fb5f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponHolder: {fileID: 1925299037}
+  currentWeaponObject: {fileID: 0}
+  defaultWeapon: {fileID: 11400000, guid: 4d5b264548db2e74687f36d1f5d27049, type: 2}
+  currentWeapon: 0
 --- !u!1 &1300381696
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,13 +456,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925299036}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.51}
+  m_LocalRotation: {x: -0, y: 0.07634932, z: -0, w: 0.99708116}
+  m_LocalPosition: {x: 0.6, y: 0.39999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1251029244}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 8.758, z: 0}
 --- !u!1 &2021404411
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,6 +691,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 107478270958799023, guid: 97bdd0c8aa07fbe43a18fedc72643ee5,
+        type: 3}
+      propertyPath: weapon2
+      value: 
+      objectReference: {fileID: 11400000, guid: 008c1a852ed5e3e4eb344939a5122e12,
+        type: 2}
     - target: {fileID: 2045674089222186360, guid: 97bdd0c8aa07fbe43a18fedc72643ee5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -726,6 +754,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200877692531203420, guid: 97bdd0c8aa07fbe43a18fedc72643ee5,
         type: 3}
+      propertyPath: CameraDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200877692531203420, guid: 97bdd0c8aa07fbe43a18fedc72643ee5,
+        type: 3}
       propertyPath: ShoulderOffset.y
       value: 0.2
       objectReference: {fileID: 0}
@@ -734,10 +767,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.70000005
       objectReference: {fileID: 0}
+    - target: {fileID: 8924569034668148698, guid: 97bdd0c8aa07fbe43a18fedc72643ee5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 9007662896361124041, guid: 97bdd0c8aa07fbe43a18fedc72643ee5,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.70000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007662896361124041, guid: 97bdd0c8aa07fbe43a18fedc72643ee5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -746,7 +789,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1925299037}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6794931681487739029, guid: 97bdd0c8aa07fbe43a18fedc72643ee5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1251029250}
   m_SourcePrefab: {fileID: 100100000, guid: 97bdd0c8aa07fbe43a18fedc72643ee5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -7,12 +7,13 @@ public class PlayerShooting : MonoBehaviour
     private Camera _camera;
 
     [SerializeField] private float _shootRange;
-    [SerializeField] private float _fireRate;
     private float _lastShootTime = 0;
+    private PlayerEquipmentManager _equipmentManager;
+    private PlayerInventory _inventory;
 
     private void Start()
     {
-        _camera = GetComponentInChildren<Camera>();
+        GetReferences();
     }
 
     private void Update()
@@ -30,17 +31,31 @@ public class PlayerShooting : MonoBehaviour
 
         if(Physics.Raycast(ray, out hit, _shootRange))
         {
+            Debug.DrawRay(ray.origin, ray.direction * _shootRange, Color.red, 0.1f);
             Debug.Log(hit.transform.name);
         }
-
     }
 
     private void Shoot()
     {
-        if(Time.time > _lastShootTime + _fireRate)
+        Weapon currentWeapon = _inventory.GetItem(_equipmentManager.currentWeapon);
+
+        if(Time.time > _lastShootTime + currentWeapon.fireRate)
         {
             _lastShootTime = Time.time;
             RaycastShoot();
         }
+    }
+
+    private void GetFireRate(Weapon weapon)
+    {
+        
+    }
+
+    private void GetReferences()
+    {
+        _camera = GetComponentInChildren<Camera>();
+        _equipmentManager = GetComponent<PlayerEquipmentManager>();
+        _inventory = GetComponent<PlayerInventory>();
     }
 }
