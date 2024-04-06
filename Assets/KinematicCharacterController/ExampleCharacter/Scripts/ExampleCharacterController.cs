@@ -70,6 +70,7 @@ namespace KinematicCharacterController.Examples
         public Transform MeshRoot;
         public Transform CameraFollowPoint;
         public float CrouchedCapsuleHeight = 1f;
+        public float playerHealth = 100f;
 
         public CharacterState CurrentCharacterState { get; private set; }
 
