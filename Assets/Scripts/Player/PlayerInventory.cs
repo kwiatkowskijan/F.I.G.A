@@ -6,15 +6,18 @@ public class PlayerInventory : MonoBehaviour
 {
     // 0 - 9
     public Weapon[] weapons;
+    private HUD hud;
 
     private void Start()
     {
+        hud = GetComponent<HUD>();
         InitVariables();
     }
 
     public void AddItem(Weapon newItem)
     {
         weapons[(int)newItem.eqSlot] = newItem;
+        
     }
 
     private void RemoveItem(int index)
