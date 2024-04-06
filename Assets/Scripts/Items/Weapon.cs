@@ -11,4 +11,5 @@ public class Weapon : Item
     public int range;
     public int eqSlot;
     public GameObject prefab;
+    public float fireRate;
 }

@@ -5,16 +5,14 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     // 0 - 9
-    [SerializeField] private Weapon[] weapons;
-
-    public Weapon weapon;
+    public Weapon[] weapons;
 
     private void Start()
     {
         InitVariables();
     }
 
-    private void AddItem(Weapon newItem)
+    public void AddItem(Weapon newItem)
     {
         weapons[(int)newItem.eqSlot] = newItem;
     }
