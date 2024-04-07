@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
     [SerializeField] private WeaponUI weaponUI;
+    [SerializeField] private InventoryUI inventoryUI; 
 
     public void UpdateWeaponName(string weaponName)
     {

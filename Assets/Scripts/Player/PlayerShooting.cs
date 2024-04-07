@@ -7,10 +7,13 @@ public class PlayerShooting : MonoBehaviour
     private Camera _camera;
 
     [SerializeField] private float _shootRange;
+    [SerializeField] private GameBehaviour gameBehaviour;
     private float _lastShootTime = 0;
     private PlayerEquipmentManager _equipmentManager;
     private PlayerInventory _inventory;
     private HUD hud;
+    private EnemyStats enemyStats;
+    private Weapon currentWeapon;
 
     public int _currentWeaponAmmo;
     public int _currenWeaponAmmoStorage;
@@ -20,9 +23,13 @@ public class PlayerShooting : MonoBehaviour
 
     private bool _canShoot = true;
 
+    [SerializeField] private LayerMask _layerMask;
+
     private void Start()
     {
         GetReferences();
+        
+
     }
 
     private void Update()
@@ -39,6 +46,10 @@ public class PlayerShooting : MonoBehaviour
 
         CheckAmmo();
         UpdateAmmo(_currentWeaponAmmo, _currenWeaponAmmoStorage);
+
+        currentWeapon = _inventory.GetItem(_equipmentManager.currentWeapon);
+
+        Debug.Log(currentWeapon.name);
     }
 
     private void RaycastShoot()
@@ -46,10 +57,17 @@ public class PlayerShooting : MonoBehaviour
         Ray ray = _camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, _shootRange))
+        if(Physics.Raycast(ray, out hit, currentWeapon.range, _layerMask))
         {
             Debug.DrawRay(ray.origin, ray.direction * _shootRange, Color.red, 0.1f);
             Debug.Log(hit.transform.name);
+
+            EnemyStats hitEnemy = hit.transform.GetComponent<EnemyStats>();
+
+            if (hitEnemy != null && gameBehaviour._currentEnemies.Contains(hitEnemy))
+            {
+                hitEnemy.TakeDamage(currentWeapon.damage);
+            }
         }
     }
 
@@ -57,7 +75,7 @@ public class PlayerShooting : MonoBehaviour
     {
         if(_canShoot)
         {
-            Weapon currentWeapon = _inventory.GetItem(_equipmentManager.currentWeapon);
+            
 
             if (Time.time > _lastShootTime + currentWeapon.fireRate)
             {
@@ -99,5 +117,6 @@ public class PlayerShooting : MonoBehaviour
         _equipmentManager = GetComponent<PlayerEquipmentManager>();
         _inventory = GetComponent<PlayerInventory>();
         hud = GetComponent<HUD>();
+        enemyStats = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyStats>();
     }
 }
