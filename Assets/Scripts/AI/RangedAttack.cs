@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -21,6 +20,10 @@ public class RangedAttack : MonoBehaviour
 
     void Update()
     {
+        // Ensure the player reference is not null
+        if (player == null)
+            return;
+
         enemy.SetDestination(player.position);
         ShootAtPlayer();
     }
@@ -33,17 +36,21 @@ public class RangedAttack : MonoBehaviour
 
         bulletTime = timer;
 
-        GameObject bulletObj = Instantiate(enemyBullet, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
+        // Calculate the direction towards the player
+        Vector3 direction = (player.position - spawnPoint.position).normalized;
+
+        // Instantiate the bullet facing towards the player
+        GameObject bulletObj = Instantiate(enemyBullet, spawnPoint.position, Quaternion.LookRotation(direction)) as GameObject;
         Rigidbody bulletRig = bulletObj.GetComponent<Rigidbody>();
-        bulletRig.AddForce(bulletRig.transform.forward * enemySpeed);
+        bulletRig.velocity = direction * enemySpeed; // Set the velocity instead of adding force
         Destroy(bulletObj, 2f);
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             Destroy(gameObject);
         }
     }
-
 }

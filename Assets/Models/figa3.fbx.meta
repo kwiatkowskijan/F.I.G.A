@@ -33,8 +33,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature.001|Idle (1)
-      takeName: Armature.001|Idle
+      name: Armature.001|IdleKalash (1)
+      takeName: Armature.001|IdleKalash
       internalID: -1852955869001379038
       firstFrame: 0
       lastFrame: 30

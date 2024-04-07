@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
     [SerializeField] private WeaponUI weaponUI;
-    [SerializeField] private InventoryUI inventoryUI; 
+    [SerializeField] private InventoryUI inventoryUI;
+    [SerializeField] private HealthUI healthUI;
 
     public void UpdateWeaponName(string weaponName)
     {
@@ -21,5 +22,10 @@ public class HUD : MonoBehaviour
     public void UpdateWeaponAmmoStorage(int storage)
     {
         weaponUI.currentAmmoInStorage.SetText(storage.ToString());
+    }
+
+    public void UpdateHealthUI(int health)
+    {
+        healthUI.health_text.SetText(health.ToString());
     }
 }

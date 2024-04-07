@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private List<EnemyStats> _enemies;
     [SerializeField] private GameBehaviour _gameBehaviour;
 
-    private float _spawnInterval = 5f;
+    [SerializeField] private float _spawnInterval = 5f;
 
     private void Start()
     {

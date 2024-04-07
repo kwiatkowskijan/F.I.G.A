@@ -28,8 +28,6 @@ public class PlayerShooting : MonoBehaviour
     private void Start()
     {
         GetReferences();
-        
-
     }
 
     private void Update()
