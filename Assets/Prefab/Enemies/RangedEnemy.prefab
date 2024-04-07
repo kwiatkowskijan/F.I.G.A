@@ -201,7 +201,11 @@ MonoBehaviour:
   enemyBullet: {fileID: 652944688779978468, guid: 6c22c90091c102446b6ebe04b61b2102,
     type: 3}
   spawnPoint: {fileID: 4452984806655755231}
+<<<<<<< HEAD
   enemySpeed: 50
+=======
+  enemySpeed: 5000
+>>>>>>> 739162990a8d8d51b36cc1262d44f9302fa3c85a
 --- !u!114 &4387085151709453560
 MonoBehaviour:
   m_ObjectHideFlags: 0
