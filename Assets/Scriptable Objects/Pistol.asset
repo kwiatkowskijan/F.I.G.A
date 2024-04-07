@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a4c812c7745cd4692ee009869ce7eb, type: 3}
+  m_Name: Pistol
+  m_EditorClassIdentifier: 
+  name: Pistol
+  description: 
+  icon: {fileID: 0}
+  magCount: 12
+  damage: 12
+  range: 20
+  fireRate: 0.3
+  eqSlot: 1
+  ammo: 11
+  storageAmmo: 210
+  prefab: {fileID: 3157565929852043342, guid: cc4156adf6614cb4693b57fd602cf0b9, type: 3}
+  shootingParticles: {fileID: 8404393448435896341, guid: ac21f6bd261c316469be6dc52dfee879,
+    type: 3}
+  muzzle: {fileID: 0}
