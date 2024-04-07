@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -17,6 +16,13 @@ public class RangedAttack : MonoBehaviour
     void Update()
     {
         enemy.SetDestination(player.position);
+
+        Vector3 directionToPlayer = player.position - spawnPoint.position;
+        directionToPlayer.y = 0; 
+
+        Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
+        spawnPoint.rotation = Quaternion.RotateTowards(spawnPoint.rotation, targetRotation, Time.deltaTime * 360);
+
         ShootAtPlayer();
     }
 
@@ -33,12 +39,12 @@ public class RangedAttack : MonoBehaviour
         bulletRig.AddForce(bulletRig.transform.forward * enemySpeed);
         Destroy(bulletObj, 2f);
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
     }
-
 }
