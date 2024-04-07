@@ -8,6 +8,11 @@ public class EnemyRetreat : MonoBehaviour
     public float keepDistance = 5f; // Odleg³oœæ, jak¹ przeciwnik trzyma siê od gracza
     public float moveSpeed = 5f; // Szybkoœæ przeciwnika
 
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     private void Update()
     {
         if (PlayerInRange())

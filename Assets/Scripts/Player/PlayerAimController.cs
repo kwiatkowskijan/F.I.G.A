@@ -27,8 +27,14 @@ public class PlayerAimController : MonoBehaviour
 
     void Update()
     {
-        xAxis.Update(Time.deltaTime);
-        yAxis.Update(Time.deltaTime);
+        float mouseX = Input.GetAxis("Mouse X") * sensitivity; // Dodaj czu³oœæ do ruchu myszy w osi X
+        float mouseY = Input.GetAxis("Mouse Y") * sensitivity; // Dodaj czu³oœæ do ruchu myszy w osi Y
+
+        mouseX *= Mathf.Sign(Input.GetAxis("Mouse X")); // Zachowaj znak ruchu myszy w osi X
+        mouseY *= Mathf.Sign(Input.GetAxis("Mouse Y")); // Zachowaj znak ruchu myszy w osi Y
+
+        xAxis.Update(Time.deltaTime * mouseX); // Zaktualizuj wartoœæ osi X
+        yAxis.Update(Time.deltaTime * mouseY); // Zaktualizuj wartoœæ osi Y
 
         if (Input.GetMouseButtonDown(1))
         {
