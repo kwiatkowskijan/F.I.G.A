@@ -14,6 +14,11 @@ public class RangedAttack : MonoBehaviour
     public Transform spawnPoint;
     public float enemySpeed;
 
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     void Update()
     {
         enemy.SetDestination(player.position);

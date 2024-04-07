@@ -8,6 +8,11 @@ public class EnemyAttack : MonoBehaviour
     private float nextAttackTime = 0f;
     public Transform player; // Zmieniamy typ na publiczne pole, aby mo¿na by³o przypisaæ obiekt gracza w edytorze Unity
 
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     void Update()
     {
         if (player == null) // Dodajemy sprawdzenie, czy obiekt gracza zosta³ przypisany

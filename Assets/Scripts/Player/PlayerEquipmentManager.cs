@@ -8,13 +8,14 @@ public class PlayerEquipmentManager : MonoBehaviour
 {
     private PlayerInventory _inventory;
     private PlayerShooting _shooting;
+    private HUD HUD;
 
     [SerializeField] private Transform weaponHolder;
     [SerializeField] private GameObject currentWeaponObject = null;
     [SerializeField] Weapon defaultWeapon;
     [SerializeField] Weapon defaultWeapon2;
     public Transform currentWeaponBarrell;
-    private HUD HUD;
+    
     
 
     public int currentWeapon = 0;
@@ -72,9 +73,7 @@ public class PlayerEquipmentManager : MonoBehaviour
     private void InitVariables()
     {
         _inventory.AddItem(defaultWeapon);
-        EquipWeapon(_inventory.GetItem(0));
-
         _inventory.AddItem(defaultWeapon2);
-        EquipWeapon(_inventory.GetItem(1));
+        EquipWeapon(_inventory.GetItem(0));
     }
 }
