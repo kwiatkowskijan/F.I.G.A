@@ -22,7 +22,7 @@ MonoBehaviour:
   eqSlot: 0
   ammo: 31
   storageAmmo: 310
-  prefab: {fileID: 3157565929852043342, guid: cc4156adf6614cb4693b57fd602cf0b9, type: 3}
+  prefab: {fileID: 919132149155446097, guid: c3a008a369cc3de42afc747417a58ec3, type: 3}
   shootingParticles: {fileID: 8404393448435896341, guid: ac21f6bd261c316469be6dc52dfee879,
     type: 3}
   muzzle: {fileID: 0}
