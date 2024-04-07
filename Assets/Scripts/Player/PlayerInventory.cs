@@ -6,11 +6,9 @@ public class PlayerInventory : MonoBehaviour
 {
     // 0 - 9
     public Weapon[] weapons;
-    private HUD hud;
 
     private void Start()
     {
-        hud = GetComponent<HUD>();
         InitVariables();
     }
 
