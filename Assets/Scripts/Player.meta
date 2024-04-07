@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 306ff2b0837f0f2428f360e3721ac7c8
+=======
+guid: e814f220454c9f8428f2d477e7d83a7c
+>>>>>>> origin/Arek
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
